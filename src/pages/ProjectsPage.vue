@@ -1,8 +1,9 @@
 <script>
 import axios from "axios";
-import AppCard from "./AppCard.vue";
+import AppCard from "../components/AppCard.vue";
 
 export default {
+  name: "ProjectsPage",
   components: {
     AppCard,
   },
@@ -26,9 +27,9 @@ export default {
 
 <template>
   <div class="container">
-    <h1 class="my-4">Elenco dei progetti</h1>
+    <h1>Projects</h1>
     <div class="row">
-      <div class="col-md-6" v-for="project in projects" :key="project.id">
+      <div class="col-md-4" v-for="project in projects" :key="project.id">
         <!-- Card passaggio delle props -->
         <AppCard :project="project" />
         <!-- /Card -->
