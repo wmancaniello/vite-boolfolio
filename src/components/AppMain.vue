@@ -1,7 +1,11 @@
 <script>
 import axios from "axios";
+import AppCard from "./AppCard.vue";
 
 export default {
+  components: {
+    AppCard,
+  },
   data() {
     return {
       projects: [],
@@ -25,19 +29,8 @@ export default {
     <h1 class="my-4">Elenco dei progetti</h1>
     <div class="row">
       <div class="col-md-6" v-for="project in projects" :key="project.id">
-        <!-- Card -->
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">{{ project.title }}</h5>
-            <p class="card-text">{{ project.description }}</p>
-            <p class="card-text">
-              <small>{{ project.slug }}</small>
-            </p>
-            <p class="card-text">
-              <small>Categoria: {{ project.category_id }}</small>
-            </p>
-          </div>
-        </div>
+        <!-- Card passaggio delle props -->
+        <AppCard :project="project" />
         <!-- /Card -->
       </div>
     </div>
