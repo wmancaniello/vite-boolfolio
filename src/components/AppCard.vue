@@ -21,6 +21,11 @@ export default {
       <p class="card-text">
         <small>Categoria: {{ project.category_id }}</small>
       </p>
+      
+      <!-- Details_Show -->
+      <router-link :to="'/projects/' + project.slug" class="btn btn-primary"
+        >Dettagli</router-link
+      >
     </div>
   </div>
 </template>
